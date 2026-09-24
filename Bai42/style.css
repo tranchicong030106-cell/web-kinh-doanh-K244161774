@@ -1,0 +1,124 @@
+BODY {
+    color: green;
+    background: white no-repeat fixed center center;
+}
+H1, H2, H3, H4, H5, H6 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+ADDRESS {
+    font-size: 0.9em;
+    font-style: normal;
+    text-align: center;
+    text-transform: uppercase;
+}
+BLOCKQUOTE {
+    background-color: silver;
+}
+UL {
+    list-style: circle url(hinh/Apple.jpg) outside;
+}
+UL B {
+    color: rgb(155,0,0);
+}
+A {
+    font-size: 0.9em;
+    color: green;
+}
+A:hover {
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.Special {
+    color: rgb(153,102,6);
+    font-weight: bold;
+}
+DIV.Article {
+    padding: 0.5em;
+    border-style: solid;
+    border-width: 2px;
+    background-color: rgb(252,221,163);
+    width: 250px;
+    float: right;
+}
+
+/* Bố cục bổ sung để trang gần giống hình minh họa */
+body {
+    margin: 0;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+}
+#page {
+    width: 760px;
+    margin: 18px auto;
+    padding: 0 14px 18px;
+}
+header {
+    text-align: center;
+}
+.logo {
+    width: 362px;
+    max-width: 100%;
+}
+nav {
+    margin: 4px 0 10px;
+    word-spacing: 16px;
+}
+nav a {
+    word-spacing: normal;
+}
+hr {
+    border: 0;
+    border-top: 1px solid #888;
+}
+h1 {
+    color: rgb(153,102,6);
+    font-size: 24px;
+    margin: 10px 0 8px;
+}
+h2 {
+    font-size: 16px;
+    margin: 12px 0 6px;
+}
+p {
+    line-height: 1.25;
+    margin: 7px 0;
+}
+.products {
+    margin-right: 285px;
+    padding-left: 28px;
+}
+.products li {
+    margin-bottom: 5px;
+    line-height: 1.15;
+}
+.Article {
+    margin: 0 0 12px 18px;
+}
+.Article h2 {
+    color: rgb(153,102,6);
+    margin-top: 0;
+}
+.messier {
+    width: 100px;
+    height: 98px;
+    float: right;
+    margin: 0 0 6px 8px;
+}
+.clear {
+    clear: both;
+}
+blockquote {
+    margin: 8px 12px;
+    padding: 5px 8px;
+    color: green;
+}
+blockquote span {
+    font-style: italic;
+}
+address {
+    margin-top: 18px;
+    text-align: left;
+    text-transform: none;
+    line-height: 1.3;
+}
