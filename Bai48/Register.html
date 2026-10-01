@@ -1,88 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Bài 48 - Register</title>
-<style>
-body{font-family:"Times New Roman",serif;background:#fff;margin:0;padding:28px}
-.panel{width:620px;margin:auto;background:#94c9f5;border:1px solid #6f99bd;padding:8px 55px 22px}
-.logo{text-align:center;margin-bottom:12px}.logo img{width:230px;height:auto}
-h2{text-align:center;margin:8px 0 14px;font-size:22px}
-.note{text-align:center;font-size:12px;margin-bottom:8px}
-table{width:100%;border-collapse:collapse;font-size:14px}
-td{padding:3px 4px;vertical-align:top}
-td:first-child{width:145px}
-input[type=text], select{height:22px;border:1px solid #b8c2cc;background:#fff}
-.short{width:110px}.medium{width:150px}.long{width:285px}
-hr{border:0;border-top:1px solid #7da9ca;margin:8px 0}
-textarea{width:100%;height:105px;resize:none;border:1px solid #b8c2cc}
-.actions{text-align:center;margin-top:10px}
-button{font-family:"Times New Roman",serif;padding:2px 10px}
-.group{display:flex;gap:22px;flex-wrap:wrap}.stack{display:inline-block;min-width:100px}
-</style>
-<script>
-function registerForm(){
-    alert("Đăng ký thành công");
-}
-function cancelForm(){
-    document.getElementById("registerForm").reset();
-}
-</script>
+  <meta charset="UTF-8">
+  <title>Bài 48 - Register</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-<div class="panel">
-    <div class="logo"><img src="data:image/gif;base64,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" alt="Jackson Electronics"></div>
+  <main class="register-card">
+    <img class="logo" src="hinh/Jackson.gif" alt="Jackson Electronics">
     <h2>Registration Form</h2>
-    <div class="note">Register your Jackson Electronics product here</div>
+    <p class="note">Register your Jackson Electronics product here</p>
 
-    <form id="registerForm" onsubmit="registerForm(); return false;">
-    <table>
-        <tr><td>First Name:</td><td><input class="medium" type="text"> Last Name: <input class="medium" type="text"></td></tr>
-        <tr><td>Address #1:</td><td><input class="long" type="text"></td></tr>
-        <tr><td>Address #2:</td><td><input class="long" type="text"></td></tr>
-        <tr><td>City:</td><td><input class="medium" type="text"> State: <input style="width:45px" type="text"> Zip: <input style="width:80px" type="text"></td></tr>
-        <tr><td>Country:</td><td>
-            <select class="medium"><option>United States</option><option>Vietnam</option><option>Canada</option><option>Japan</option></select>
-        </td></tr>
-        <tr><td colspan="2"><hr></td></tr>
-        <tr><td>Product:</td><td>
-            <select class="medium"><option>ScanMaster</option><option>LaserPrint 1000</option><option>AudioMax</option></select>
-        </td></tr>
-        <tr><td>Date Purchased:</td><td><input class="medium" type="text"></td></tr>
-        <tr><td>Serial #:</td><td><input class="medium" type="text"></td></tr>
-        <tr><td>Used for:</td><td>
-            <div class="group">
-                <span class="stack">
-                    <label><input type="radio" name="used"> Home</label><br>
-                    <label><input type="radio" name="used"> Business</label><br>
-                    <label><input type="radio" name="used"> Government</label>
-                </span>
-                <span class="stack">
-                    <label><input type="radio" name="used"> Educational Institution</label><br>
-                    <label><input type="radio" name="used"> Other</label>
-                </span>
-            </div>
-        </td></tr>
-        <tr><td>System (check all that apply):</td><td>
-            <div class="group">
-                <span class="stack">
-                    <label><input type="checkbox"> Windows</label><br>
-                    <label><input type="checkbox"> Macintosh</label>
-                </span>
-                <span class="stack">
-                    <label><input type="checkbox"> UNIX</label><br>
-                    <label><input type="checkbox"> Other</label>
-                </span>
-            </div>
-        </td></tr>
-        <tr><td colspan="2"><hr></td></tr>
-        <tr><td>Comments?:</td><td><textarea></textarea></td></tr>
-    </table>
-    <div class="actions">
+    <form id="registerForm">
+      <div class="row">
+        <label>First Name:</label>
+        <div><input type="text"> Last Name: <input type="text"></div>
+      </div>
+      <div class="row"><label>Address #1:</label><input class="wide" type="text"></div>
+      <div class="row"><label>Address #2:</label><input class="wide" type="text"></div>
+      <div class="row">
+        <label>City:</label>
+        <div><input type="text"> State: <input class="state" type="text"> Zip: <input class="zip" type="text"></div>
+      </div>
+      <div class="row">
+        <label>Country:</label>
+        <select><option>United States</option><option>Vietnam</option></select>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <label>Product:</label>
+        <select><option>ScanMaster</option><option>LaserPrint 1000</option><option>AudioMax</option></select>
+      </div>
+      <div class="row"><label>Date Purchased:</label><input type="text"></div>
+      <div class="row"><label>Serial #:</label><input type="text"></div>
+
+      <div class="row">
+        <label>Used for:</label>
+        <div class="choices">
+          <label><input type="radio" name="used"> Home</label>
+          <label><input type="radio" name="used"> Educational Institution</label>
+          <label><input type="radio" name="used"> Business</label>
+          <label><input type="radio" name="used"> Other</label>
+          <label><input type="radio" name="used"> Government</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <label>System (check all that apply):</label>
+        <div class="choices">
+          <label><input type="checkbox"> Windows</label>
+          <label><input type="checkbox"> UNIX</label>
+          <label><input type="checkbox"> Macintosh</label>
+          <label><input type="checkbox"> Other</label>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <label>Comments?:</label>
+        <textarea></textarea>
+      </div>
+
+      <div class="actions">
         <button type="submit">Click to register</button>
-        <button type="button" onclick="cancelForm()">Click to cancel</button>
-    </div>
+        <button type="button" id="cancelBtn">Click to cancel</button>
+      </div>
     </form>
-</div>
+  </main>
 </body>
 </html>

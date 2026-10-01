@@ -1,69 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Bài 49 - Online Classified</title>
-<style>
-body{font-family:"Times New Roman",serif;background:#fff;margin:0;padding:28px}
-.box{width:610px;margin:auto;background:#c6f6f7;border:2px solid #2c6ea3;padding:10px 12px 22px}
-h1{color:#ff3c37;font-size:24px;margin:6px 0 12px}
-hr{border:0;border-top:1px solid #7baab0;margin-bottom:18px}
-.section{font-weight:bold;margin:14px 0 9px}
-.options{margin-left:8px;line-height:1.45}
-.pub{display:grid;grid-template-columns:repeat(3,max-content);column-gap:18px;row-gap:2px}
-.dates input{width:120px;height:22px}
-.keywords{width:96%;height:24px}
-.icons{display:flex;gap:22px;margin:12px 0 0 5px}
-.iconBtn{border:0;background:transparent;padding:0;cursor:pointer;text-align:center;font-family:"Times New Roman",serif}
-.iconBtn img{display:block;width:59px;height:auto;margin:auto}
-</style>
-<script>
-function doSearch(){ alert("Search"); }
-function doHelp(){ alert("Help: Hãy chọn mục cần tìm, ấn Search để thực hiện tìm kiếm."); }
-function doCancel(){ document.getElementById("classifiedForm").reset(); }
-</script>
+  <meta charset="UTF-8">
+  <title>Bài 49 - Online Classified</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-<div class="box">
-<h1>Online Classifieds Search Form</h1>
-<hr>
-<form id="classifiedForm">
-    <div class="section">1) Search for a classified in the following sections:</div>
-    <div class="options">
-        <label><input type="radio" name="section">Employment</label>
-        &nbsp;&nbsp;<label><input type="radio" name="section">Personal</label><br>
-        <label><input type="radio" name="section" checked>For Sale</label>
-        &nbsp;&nbsp;&nbsp;&nbsp;<label><input type="radio" name="section">Miscellaneous</label><br>
-        <label><input type="radio" name="section">Housing</label>
-        &nbsp;&nbsp;&nbsp;<label><input type="radio" name="section">All of the above</label>
-    </div>
+  <main class="classified-card">
+    <h1>Online Classifieds Search Form</h1>
+    <hr>
 
-    <div class="section">2) Search the following publications:</div>
-    <div class="options pub">
-        <label><input type="checkbox" checked>Midwest times</label>
-        <label><input type="checkbox">Modern News</label>
-        <label><input type="checkbox">Employment Today</label>
-        <label><input type="checkbox" checked>Great Lakes Classifieds</label>
-        <label><input type="checkbox">Middleton Daily</label>
-        <label><input type="checkbox">Cashtown Daily News</label>
-    </div>
+    <form id="classifiedForm">
+      <section>
+        <h3>1) Search for a classified in the following sections:</h3>
+        <div class="two-cols">
+          <label><input type="radio" name="section"> Employment</label>
+          <label><input type="radio" name="section"> Personal</label>
+          <label><input type="radio" name="section" checked> For Sale</label>
+          <label><input type="radio" name="section"> Miscellaneous</label>
+          <label><input type="radio" name="section"> Housing</label>
+          <label><input type="radio" name="section"> All of the above</label>
+        </div>
+      </section>
 
-    <div class="section dates">3) From to
+      <section>
+        <h3>2) Search the following publications:</h3>
+        <div class="three-cols">
+          <label><input type="checkbox" checked> Midwest times</label>
+          <label><input type="checkbox"> Modern News</label>
+          <label><input type="checkbox"> Employment Today</label>
+          <label><input type="checkbox" checked> Great Lakes Classifieds</label>
+          <label><input type="checkbox"> Middleton Daily</label>
+          <label><input type="checkbox"> Cashtown Daily News</label>
+        </div>
+      </section>
+
+      <section class="dates">
+        <h3>3) From to</h3>
         <input type="text" placeholder="mm/dd/yy">
-        &nbsp;&nbsp;&nbsp; to
+        <span>to</span>
         <input type="text" placeholder="mm/dd/yy">
-    </div>
+      </section>
 
-    <div class="section">4) Enter a few keywords to describe the classified.</div>
-    <input class="keywords" type="text">
+      <section>
+        <h3>4) Enter a few keywords to describe the classified.</h3>
+        <input class="keywords" type="text">
+      </section>
 
-    <div class="section">5) Click one of the options below:</div>
-    <div class="icons">
-        <button class="iconBtn" type="button" onclick="doSearch()"><img src="data:image/gif;base64,R0lGODlhOwAuAPcAAAAAADMAAGYAAJkAAMwAAP8AAAAzADMzAGYzAJkzAMwzAP8zAABmADNmAGZmAJlmAMxmAP9mAACZADOZAGaZAJmZAMyZAP+ZAADMADPMAGbMAJnMAMzMAP/MAAD/ADP/AGb/AJn/AMz/AP//AAAAMzMAM2YAM5kAM8wAM/8AMwAzMzMzM2YzM5kzM8wzM/8zMwBmMzNmM2ZmM5lmM8xmM/9mMwCZMzOZM2aZM5mZM8yZM/+ZMwDMMzPMM2bMM5nMM8zMM//MMwD/MzP/M2b/M5n/M8z/M///MwAAZjMAZmYAZpkAZswAZv8AZgAzZjMzZmYzZpkzZswzZv8zZgBmZjNmZmZmZplmZsxmZv9mZgCZZjOZZmaZZpmZZsyZZv+ZZgDMZjPMZmbMZpnMZszMZv/MZgD/ZjP/Zmb/Zpn/Zsz/Zv//ZgAAmTMAmWYAmZkAmcwAmf8AmQAzmTMzmWYzmZkzmcwzmf8zmQBmmTNmmWZmmZlmmcxmmf9mmQCZmTOZmWaZmZmZmcyZmf+ZmQDMmTPMmWbMmZnMmczMmf/MmQD/mTP/mWb/mZn/mcz/mf//mQAAzDMAzGYAzJkAzMwAzP8AzAAzzDMzzGYzzJkzzMwzzP8zzABmzDNmzGZmzJlmzMxmzP9mzACZzDOZzGaZzJmZzMyZzP+ZzADMzDPMzGbMzJnMzMzMzP/MzAD/zDP/zGb/zJn/zMz/zP//zAAA/zMA/2YA/5kA/8wA//8A/wAz/zMz/2Yz/5kz/8wz//8z/wBm/zNm/2Zm/5lm/8xm//9m/wCZ/zOZ/2aZ/5mZ/8yZ//+Z/wDM/zPM/2bM/5nM/8zM///M/wD//zP//2b//5n//8z//////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAANcALAAAAAA7AC4AAAjPAK8JHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mixo8ePIEOKHEmypMlrNlLaOPlQZUqWDl2uhMnQJc2aKm8ulKkzZsKaH0XanIhzp8OePmUCDYqQJVGhOo8uhKl0adKmCp9CvRlyqtWMUq/SrKr1YNauAr+CHUt2K0GURS0RRXuNrUG3MdnCPas2qNy6bbnmDSsWq1GUgOsGJnmXb9LBez0WTkyXr2PFeBPDRTwX42LKgjMTjoz2aWC9ZCuDFd2VdNnTqDkGBAA7" alt="Search"></button>
-        <button class="iconBtn" type="button" onclick="doHelp()"><img src="data:image/gif;base64,R0lGODlhOwAtAPcAAAAAADMAAGYAAJkAAMwAAP8AAAAzADMzAGYzAJkzAMwzAP8zAABmADNmAGZmAJlmAMxmAP9mAACZADOZAGaZAJmZAMyZAP+ZAADMADPMAGbMAJnMAMzMAP/MAAD/ADP/AGb/AJn/AMz/AP//AAAAMzMAM2YAM5kAM8wAM/8AMwAzMzMzM2YzM5kzM8wzM/8zMwBmMzNmM2ZmM5lmM8xmM/9mMwCZMzOZM2aZM5mZM8yZM/+ZMwDMMzPMM2bMM5nMM8zMM//MMwD/MzP/M2b/M5n/M8z/M///MwAAZjMAZmYAZpkAZswAZv8AZgAzZjMzZmYzZpkzZswzZv8zZgBmZjNmZmZmZplmZsxmZv9mZgCZZjOZZmaZZpmZZsyZZv+ZZgDMZjPMZmbMZpnMZszMZv/MZgD/ZjP/Zmb/Zpn/Zsz/Zv//ZgAAmTMAmWYAmZkAmcwAmf8AmQAzmTMzmWYzmZkzmcwzmf8zmQBmmTNmmWZmmZlmmcxmmf9mmQCZmTOZmWaZmZmZmcyZmf+ZmQDMmTPMmWbMmZnMmczMmf/MmQD/mTP/mWb/mZn/mcz/mf//mQAAzDMAzGYAzJkAzMwAzP8AzAAzzDMzzGYzzJkzzMwzzP8zzABmzDNmzGZmzJlmzMxmzP9mzACZzDOZzGaZzJmZzMyZzP+ZzADMzDPMzGbMzJnMzMzMzP/MzAD/zDP/zGb/zJn/zMz/zP//zAAA/zMA/2YA/5kA/8wA//8A/wAz/zMz/2Yz/5kz/8wz//8z/wBm/zNm/2Zm/5lm/8xm//9m/wCZ/zOZ/2aZ/5mZ/8yZ//+Z/wDM/zPM/2bM/5nM/8zM///M/wD//zP//2b//5n//8z//////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAANcALAAAAAA7AC0AAAjBAK8JHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mix40BLIEOC9EhRpMmRJB+eXJmyIcuTLRmaLDgzZsKaH0XanIhzp8OePmUCDYqQJVGhOo8uhKl0adKmCp9CvRlyqtWMUq/SrKr1YNauAr+CHUt2K0GURS0RRXuNrUG3MdnCPas2qNy6bbnmDSsWq1GUgOsGJnmXb9LBez0WTkyXr2PFeBPDRTwX42LKgjMTjoz2aWC9ZCuDFd2VdNnTqDkGBAA7" alt="Help"></button>
-        <button class="iconBtn" type="button" onclick="doCancel()"><img src="data:image/gif;base64,R0lGODlhOwAtAPcAAAAAADMAAGYAAJkAAMwAAP8AAAAzADMzAGYzAJkzAMwzAP8zAABmADNmAGZmAJlmAMxmAP9mAACZADOZAGaZAJmZAMyZAP+ZAADMADPMAGbMAJnMAMzMAP/MAAD/ADP/AGb/AJn/AMz/AP//AAAAMzMAM2YAM5kAM8wAM/8AMwAzMzMzM2YzM5kzM8wzM/8zMwBmMzNmM2ZmM5lmM8xmM/9mMwCZMzOZM2aZM5mZM8yZM/+ZMwDMMzPMM2bMM5nMM8zMM//MMwD/MzP/M2b/M5n/M8z/M///MwAAZjMAZmYAZpkAZswAZv8AZgAzZjMzZmYzZpkzZswzZv8zZgBmZjNmZmZmZplmZsxmZv9mZgCZZjOZZmaZZpmZZsyZZv+ZZgDMZjPMZmbMZpnMZszMZv/MZgD/ZjP/Zmb/Zpn/Zsz/Zv//ZgAAmTMAmWYAmZkAmcwAmf8AmQAzmTMzmWYzmZkzmcwzmf8zmQBmmTNmmWZmmZlmmcxmmf9mmQCZmTOZmWaZmZmZmcyZmf+ZmQDMmTPMmWbMmZnMmczMmf/MmQD/mTP/mWb/mZn/mcz/mf//mQAAzDMAzGYAzJkAzMwAzP8AzAAzzDMzzGYzzJkzzMwzzP8zzABmzDNmzGZmzJlmzMxmzP9mzACZzDOZzGaZzJmZzMyZzP+ZzADMzDPMzGbMzJnMzMzMzP/MzAD/zDP/zGb/zJn/zMz/zP//zAAA/zMA/2YA/5kA/8wA//8A/wAz/zMz/2Yz/5kz/8wz//8z/wBm/zNm/2Zm/5lm/8xm//9m/wCZ/zOZ/2aZ/5mZ/8yZ//+Z/wDM/zPM/2bM/5nM/8zM///M/wD//zP//2b//5n//8z//////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAANcALAAAAAA7AC0AAAjQAK8JHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mixo8ePIEOKHElSYpOTTUoeRLkSZUqVBV3GdPkS5kCaN3HaJEgzZc+dBnvqBBpUKFGERo8ilam05c+mOYXWVIrz6dGh15gSxZqV5VWtUal6nTl151ioaNOqxQjW40mTL9+ClPuQbtaQdhvmjVoTq9a/ZRnu7SpQruG4iAkrHqyQcdfDhRPz1Ol4qWXIi8vurdySZ+TPmUHnLAoXNObTiVFPBEtZ8uO+YzmvnU279sWAAAA7" alt="Cancel"></button>
-    </div>
-</form>
-</div>
+      <section>
+        <h3>5) Click one of the options below:</h3>
+        <div class="actions">
+          <button type="button" id="searchBtn"><img src="hinh/Search.gif" alt="Search"></button>
+          <button type="button" id="helpBtn"><img src="hinh/Help.gif" alt="Help"></button>
+          <button type="button" id="cancelBtn"><img src="hinh/Cancel.gif" alt="Cancel"></button>
+        </div>
+      </section>
+    </form>
+  </main>
 </body>
 </html>

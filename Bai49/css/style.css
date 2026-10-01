@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  padding: 28px;
+  font: 14px "Times New Roman", serif;
+  background: white;
+}
+
+.classified-card {
+  width: 610px;
+  margin: auto;
+  padding: 10px 14px 22px;
+  background: #c6f6f7;
+  border: 2px solid #2c6ea3;
+}
+
+h1 {
+  margin: 6px 0 12px;
+  color: #ff3c37;
+  font-size: 24px;
+}
+
+h3 {
+  margin: 14px 0 9px;
+  font-size: 14px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #7baab0;
+}
+
+.two-cols, .three-cols {
+  display: grid;
+  gap: 3px 18px;
+  margin-left: 8px;
+}
+
+.two-cols { grid-template-columns: repeat(2, max-content); }
+.three-cols { grid-template-columns: repeat(3, max-content); }
+
+.dates {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dates h3 { margin-right: 2px; }
+.dates input { width: 120px; height: 22px; }
+
+.keywords {
+  width: 96%;
+  height: 24px;
+}
+
+.actions {
+  display: flex;
+  gap: 22px;
+  margin: 12px 0 0 5px;
+}
+
+.actions button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.actions img { width: 59px; }
